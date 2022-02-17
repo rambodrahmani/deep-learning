@@ -1906,7 +1906,7 @@ Even if it is a naive example, it clearly explain the idea behind trying an ense
     \caption{RGB Point cloud}
 \end{figure}
 \noindent
-To conclude, an ensemble classifier was obtained by combining the two best models obtained during the experiments performed using RGB images and 3D pointclouds.
+To conclude, an ensemble classifier was obtained by combining the two best models obtained during the experiments performed using RGB images and 3D pointclouds. It is interesting to point out that these models display weaker classification accuracy on different class labels. What I expect is that combining them the overall accuracy on all classes will increase.
 \begin{figure}[H]
     \hspace*{-1cm}
     \subfloat[\centering Confusion Matrix]{{
@@ -1935,6 +1935,16 @@ Classification Report
 weighted avg       0.87      0.86      0.87      1180
 \end{lstlisting}
 It is important to clarify that the results obtained during the test campaign might be over-optimistic since the \texttt{testing set} contained $\sim 200$ samples per class. The limited number of testing samples is due to the fact that it is hard to find datasets which provide both RGB images and 3D point clouds.
+
+\newpage
+\section{Conclusion}
+With respect to the initial project proposal, it is important to point out that I actually achieved an ensemble model which combines a classifier which takes as input RGB images and one which takes as input 3D point clouds. The main criticalities are related to the available dataset size. It is not easy to find labeled 3D point clouds datasets. RGB images datasets are much more commonly found. As a result the number of 3D point cloud samples with which the project was developed was limited to $\sim 700$ per class. A bigger dataset will allow for a more robust model as well as more accurate testing. The idea that an ensemble classifier working on both RGB images and 3D point cloud will provide better overall accuracy was actually verified during the testing phase. However, again, due to the limited amount of samples in the \texttt{testing set} the obtained results can not be considered \texttt{statistically sound}.\\
+\\
+Among the lessons learnt:
+\begin{itemize}
+    \item the retraining of the model for RGB images and the one for 3D point cloud from scratch was necessary due to a mismatch between class labels and class indices (i.e. 1:'chair', 2:'table') in the two models;
+    \item training is computationally expensive and time consuming; this was initially underestimated and as a result \texttt{Stratified K-Fold Cross Validation} was abandoned.
+\end{itemize}
 
 \newpage
 \nocite{kerasiopointnet}
