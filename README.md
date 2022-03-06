@@ -1,12 +1,6 @@
 # Deep Learning
 Final project for the Computational Intelligence and Deep Learning course at University of Pisa.
 
-# RGB Images Classification using VGG16
-VGG16 is a convolution neural net (CNN) architecture which was used to win ILSVR (Imagenet) competition in 2014.
-<p align="center">
-    <img src="documentation/imgs/vgg16.png" alt="VGG16 Network" height="300" />
-</p>
-
 # Ensemble of RGB Images and 3D PointClouds Classification
 As stated in the introductory chapter, the aim of the project was combining two different types of raw data:
  - RGB Images;
@@ -19,6 +13,12 @@ Ideally we would like to have such input raw data from two different sensors (i.
 </p>
 <p align="center">
     <img src="jupyter/imgs/sample-sofa-trisurf-pointcloud.jpg" alt="Sample Sofa RGB Image + PointCloud" height="300" />
+</p>
+
+# RGB Images Classification using VGG16
+VGG16 is a convolution neural net (CNN) architecture which was used to win ILSVR (Imagenet) competition in 2014.
+<p align="center">
+    <img src="documentation/imgs/vgg16.png" alt="VGG16 Network" height="300" />
 </p>
 
 # 3D PointClouds Classification using PointNet
